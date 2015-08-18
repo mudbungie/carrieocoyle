@@ -1,8 +1,16 @@
-<ul>
-    <li>Contact</li>
-    <li>Gallery</li>
-    <li>Placeholder 0</li>
-    <li>Placeholder 1</li>
-    <li>Placeholder 2</li>
-    <li>Placeholder 3</li>
-</ul>
+{% block css_links %}
+    {{ block.super.super }}
+    <link rel='stylesheet' href='/topbar.css'>
+{% endblock %}
+
+{% block content %}
+    <ul class='topbar'>
+        <li>Contact</li>
+        <li>Gallery</li>
+        <li>Placeholder 0</li>
+        <li>Placeholder 1</li>
+        <li>Placeholder 2</li>
+        <li>Placeholder 3</li>
+    </ul>
+    {{block.super}}
+{% endblock %}

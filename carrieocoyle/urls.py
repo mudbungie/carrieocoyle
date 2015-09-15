@@ -17,11 +17,18 @@ from django.conf.urls import include, url
 from django.conf.urls.static import static
 from django.contrib import admin
 from django.conf import settings
+from django.contrib.staticfiles import views
 
 urlpatterns = [
     # admin
     url(r'^admin/', include(admin.site.urls)),
     # homepage
     url(r'^$', 'homepage.views.index'),
-    # static
-    ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+    ]
+
+# static files when running the debug server
+if settings.DEBUG:
+    urlpatterns += [
+    url(r'^static/(?P<path>.*)$', views.serve),
+    url(r'^media/(?P<path>.*)$', views.serve)
+    ]

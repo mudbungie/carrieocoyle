@@ -3,11 +3,12 @@
     {{ block.super }}
     <!-- <link rel='stylesheet' href='topbar.css'> -->
     {% load staticfiles %}
-    <link rel='stylesheet' href="{% static  "topbar.css" %}">
+    <link rel='stylesheet' href="{% static  "nav.css" %}">
 {% endblock %}
-    
+{% block bodyDeclaration %}
+<body bgcolor='black'>
+{% endblock %}    
 {% block content %}
-    {% include 'snippets/topbar.html' %}
-    <img src='static/demo_background.png' alt='It&apos;s me in my studio!'>
-    
+    {% include 'snippets/nav.html' %}
+    {% include 'homepage/studio_panorama.html' %}
 {% endblock %}

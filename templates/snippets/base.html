@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang='en'>
 <head>
-    <link rel='stylesheet' href='style.css'/>
+    <link rel='stylesheet' href='/static/style.css'/>
     <title>{% block title %}Carrie O'Coyle{% endblock %}</title>
     {% block css_links %}{% endblock %}
 </head>
-
+{% block bodyDeclaration %}
 <body bgcolor='black'>
+{% endblock%}
     {% block content %}
 
     {% endblock %}

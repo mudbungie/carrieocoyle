@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <html lang='en'>
 <head>
-    <link rel='stylesheet' href='/static/style.css'/>
+    <style>
+        {% block style %}
+        {% endblock %}
+    </style>
     <title>{% block title %}Carrie O'Coyle{% endblock %}</title>
     {% block css_links %}{% endblock %}
 </head>
@@ -9,7 +12,6 @@
 <body bgcolor='black'>
 {% endblock%}
     {% block content %}
-
     {% endblock %}
 </body> 
 </html>

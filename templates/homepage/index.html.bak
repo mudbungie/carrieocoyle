@@ -1,6 +1,9 @@
 {% extends 'snippets/base.html' %}
-{% block style %}
-    {% include 'css/nav.css' %}
+{% block css_links %}
+    {{ block.super }}
+    <!-- <link rel='stylesheet' href='topbar.css'> -->
+    {% load staticfiles %}
+    <link rel='stylesheet' href="{% static  "nav.css" %}">
 {% endblock %}
 {% block bodyDeclaration %}
 <body bgcolor='black'>

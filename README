@@ -1,0 +1,4 @@
+Requires Python3.4
+Django
+Pillow
+pytz

@@ -1,0 +1,106 @@
+html {
+    font-size: 100%;
+}
+body {
+    margin: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    color: #333333;
+    font-size: 14px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    line-height: 20px;
+}
+.body-wrapper {
+    height: 100%;
+    width: 100%;
+    padding-bottom: 0px;
+    position: relative;
+    background: linear-gradient(grey, black);
+}
+.navbar {
+    margin-bottom: 20px;
+    position: static;
+    top: 0;
+    left: 0;
+    right: 0;
+    overflow: visible;
+    line-height: 20px;
+    padding: 5px;
+    background-color: #1b1b1b1;
+    background-image: linear-gradient(to bottom, #222222, #111111);
+    background-repeat: repeat-x;
+    box-shadow: 0 1px 10px rgba(0, 0, 0, 0.1);
+    border-color: #252525;
+    border-radius: 0;
+    border-width: 0 0 1px;
+    min-height: 40px;
+    width: 98.8%;
+}
+.container {
+    content: "";
+}
+.brand {
+    margin: 0 0 0 -5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 8px;
+    color: #999999;
+    text-shadow: 0 -1px 0 rgba(0 0 0 0.25);
+    display: block;
+    float: left;
+    font-size: 20px;
+    font-weight: 200;
+    
+}
+.brand {
+    text-decoration: none;
+}
+.nav-collapse {
+    height: 0;
+    overflow: hidden;
+    clear: both;
+    position: relative;
+    transition: height 0.35s ease 0s;
+}
+.nav {
+    float: none;
+    margin: 0;
+    padding: 0;
+    display: block;
+    left: 0;
+    list-style-type: none;
+    padding: 0;
+    padding-bottom: 30px;
+}
+.nav li {
+    z-index: 2000;
+    display: inline;
+    float: left;
+}
+.nav a {
+    color: #999999;
+    background-color: #111111;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.125) inset;
+    text-decoration: none;
+    border-radius: 3px;
+    font-weight: bold;
+    padding: 9px 15px;
+    margin-bottom: 2px;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.125);
+    float: none;
+    display: block;
+}
+.content-wrapper {
+    width: 100%;
+    position: fixed;
+}
+.splash {
+    max-width: 767px;
+}
+.signature-img {
+    padding-top: 150px;
+    max-width: 575px;
+}
+.copyright {
+}
+

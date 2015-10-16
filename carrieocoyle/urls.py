@@ -14,21 +14,32 @@ Including another URLconf
     2. Add a URL to urlpatterns:  url(r'^blog/', include(blog_urls))
 """
 from django.conf.urls import include, url
-from django.conf.urls.static import static
 from django.contrib import admin
+from django.conf.urls.static import static
 from django.conf import settings
 from django.contrib.staticfiles import views
 
 urlpatterns = [
-    # admin
     url(r'^admin/', include(admin.site.urls)),
-    # homepage
-    url(r'^$', 'homepage.views.index'),
-    ]
-
-# static files when running the debug server
+    # gallery with optional trailing slash
+    url(r'^gallery/?$', 'gallery.views.pieces'),
+    # should match one or more of any character following the gallery
+    url(r'^gallery/(.+)$', 'gallery.views.piece'),
+    # blog
+    #url(r'^blog/?$', 'blog.views.blog'),
+    # individual blog post
+    #url(r'^blog/(.+)$', 'blog.views.post'),
+    # contact
+    url(r'contact/?$', 'boringpages.views.contact'),
+    # about
+    url(r'^about/?$', 'boringpages.views.about'),
+    # shop
+    #url(r'^shop$', 'shop.views.store'),
+    # home
+    url(r'^/?', 'boringpages.views.home'),
+]
 if settings.DEBUG:
     urlpatterns += [
+    # static files for development only; actual ones will be served by nginx
     url(r'^static/(?P<path>.*)$', views.serve),
-    url(r'^media/(?P<path>.*)$', views.serve)
     ]

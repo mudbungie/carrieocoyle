@@ -1,13 +1,16 @@
 from django.db import models
+from django.utils.text import slugify
 
 class Piece(models.Model):
     title = models.CharField(max_length=255)
-    # slug is a short0hand for the name, used in URLs and such
-    # it will be set to default to the title with underscore
-    # replacement in the admin console
-    slug = models.SlugField(max_length=255)
-    description = models.CharField(max_length=255)
-    content = models.TextField()
+    # jargon for short title; derived from title
+    slug = models.SlugField(max_length=255, unique=True, blank=True)
+    description = models.TextField()
     published = models.BooleanField(default=True)
     created = models.DateTimeField(auto_now_add=True)
-
+    image = models.ImageField(default='/static/signature.jpg')    
+    
+    def save(self, *args, **kwargs):
+        # add identifying slug field on save
+        self.slug = slugify(self.title)
+        super(Piece, self).save(*args, **kwargs)

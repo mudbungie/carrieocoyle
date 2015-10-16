@@ -1,0 +1,8 @@
+{% extends 'base_site.html' %}
+
+{% block content %}
+    <h1 Gallery!>
+    {% for piece in pieces reversed %}
+        {% include 'gallery/piece.html' %}
+    {% endfor %}
+{% endblock %}

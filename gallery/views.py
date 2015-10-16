@@ -1,12 +1,13 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render
 from gallery.models import Piece
 
-def index(request):
+def pieces(request):
     # show all of the published art pieces
-    pieces = Piece.objects.filter(published=True)
-    return render(request, 'gallery/index.html', {'posts':posts})
+    pieces = Piece.objects.filter(published=True).order_by('created')
+    return render(request, 'gallery/gallery_layout.html', {'pieces':pieces})
 
 def piece(request, slug):
-    # pull up the individual piece
-    piece = get_object_or_404(Post, slug=slug)
-    return render(render, 'gallery/post.html', {'post':post})
+    # just see an individual piece
+    pieces = get_object_or_404(Piece, slug=slug)
+    return render(render, 'gallery/post.html', {'piece':piece})
+

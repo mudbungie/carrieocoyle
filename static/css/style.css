@@ -79,7 +79,7 @@ body {
 }
 .nav a {
     color: #999999;
-    background-color: #111111;
+    background-color: transparent;
     box-shadow: 0 3px 8px rgba(0, 0, 0, 0.125) inset;
     text-decoration: none;
     border-radius: 3px;
@@ -89,6 +89,9 @@ body {
     text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.125);
     float: none;
     display: block;
+}
+.nav a:hover {
+    background-color: #111000;
 }
 .content-wrapper {
     width: 100%;

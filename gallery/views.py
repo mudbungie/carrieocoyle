@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from gallery.models import Piece
 
 def pieces(request):
@@ -8,6 +8,5 @@ def pieces(request):
 
 def piece(request, slug):
     # just see an individual piece
-    pieces = get_object_or_404(Piece, slug=slug)
-    return render(render, 'gallery/post.html', {'piece':piece})
-
+    piece = get_object_or_404(Piece, slug=slug)
+    return render(request, 'gallery/post.html', {'piece':piece})

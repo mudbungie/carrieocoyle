@@ -12,7 +12,7 @@ class Piece(models.Model):
     published = models.BooleanField(default=True)
     created = models.DateTimeField(auto_now_add=True)
     image = models.ImageField(default='/static/signature.jpg')    
-#    medium = models.ForeignKey(Medium)
+    medium = models.ForeignKey(Medium, db_column="medium_name", default=0)
     
     def save(self, *args, **kwargs):
         # add identifying slug field on save

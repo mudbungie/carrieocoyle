@@ -1,8 +1,10 @@
 {% extends 'base_site.html' %}
 
 {% block content %}
-    <div class="text_content" align="center">
-        <h1>{{ pageContent.title }}</h1>
-        <p>{{ pageContent.content }}</p>
+    <div class="text_content_wrapper" align="center">
+        <div class="text_content" align="center">
+            <h1>{{ pageContent.title }}</h1>
+            <p>{{ pageContent.content }}</p>
+        </div>
     </div>
 {% endblock %}

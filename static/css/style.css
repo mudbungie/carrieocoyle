@@ -9,13 +9,14 @@ body {
     font-size: 14px;
     font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
     line-height: 20px;
+    background: linear-gradient(grey, black);
+    background-attachment: fixed;
 }
 .body-wrapper {
     height: 100%;
     width: 100%;
     padding-bottom: 0px;
     position: relative;
-    background: linear-gradient(grey, black);
 }
 .navbar {
     margin-bottom: 20px;
@@ -105,5 +106,25 @@ body {
     max-width: 575px;
 }
 .copyright {
+    color: black;
 }
-
+.text_content {
+    max-width: 450px;
+}
+.text_content p {
+    color: black;
+}
+.gallery_piece_wrapper {
+    background-color: #006666;
+    max-width: 540px;
+}
+.gallery_piece_wrapper h1 {
+    position: relative;
+    color: #001F1F;
+    top: 15px;
+}
+.gallery_piece_wrapper img {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    max-width: 500px;
+}

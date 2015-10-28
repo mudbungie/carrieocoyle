@@ -1,5 +1,11 @@
 from django.contrib import admin
 from .models import Piece
+from .models import Medium
+
+class MediumAdmin(admin.ModelAdmin):
+    list_display = ['medium_name']
+
+admin.site.register(Medium, MediumAdmin)
 
 class PieceAdmin(admin.ModelAdmin):
     list_display = ['title']
